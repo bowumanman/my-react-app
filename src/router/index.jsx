@@ -2,7 +2,7 @@
  * @Author: zhangsai 
  * @Date: 2020-05-20 16:14:18 
  * @Last Modified by: zhangsai
- * @Last Modified time: 2020-05-21 11:51:41
+ * @Last Modified time: 2020-06-09 16:09:06
  * @Discription: 路由文件 
  */
 import React from 'react';
@@ -31,6 +31,15 @@ const router = [
         exact: true,
         component: Loadable({
             loader: () => import('../views/login'),
+            loading,
+            delay: 200
+        }),
+    },
+    {
+        path: '/show',
+        exact: true,
+        component: Loadable({
+            loader: () => import('../views/show'),
             loading,
             delay: 200
         }),

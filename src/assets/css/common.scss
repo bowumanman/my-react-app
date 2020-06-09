@@ -1,0 +1,30 @@
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+// clear float
+.clearfix:after, .clearfix:before{
+    content: "";
+    display: table;
+    clear: both;
+}
+.align-center{
+    text-align: center;
+}
+.align-left{
+    text-align: left;
+}
+.align-right{
+    text-align: right;
+}
+.vertical-middle{
+    vertical-align: middle;
+}
+.vertical-top{
+    vertical-align: top;
+}
+.vertical-bottom{
+    vertical-align: bottom;
+}

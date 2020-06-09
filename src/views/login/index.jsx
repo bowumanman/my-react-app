@@ -4,8 +4,8 @@ export default class Login extends Component{
         console.log(this.props)
     }
     render() {
-        return <div>
-            <div>Login</div>
+        return <div className="m-30">
+            Login
         </div>
     }
 }

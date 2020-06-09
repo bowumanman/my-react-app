@@ -1,0 +1,55 @@
+/*
+ * @Author: zhangsai
+ * @Date: 2020-06-09 14:56:54
+ * @Last Modified by: zhangsai
+ * @Last Modified time: 2020-06-09 16:26:02
+ * @Description: 间距  m-t-10  p-t-10  m-10  p-10
+ */
+//上下左右
+$l:l;
+$r:r;
+$t:t;
+$b:b;
+
+//间距
+$space:60;
+@while $space >=0 {
+    .m-#{$space} {
+        margin: #{$space}px!important;
+    }
+    .m-#{$t}-#{$space} {
+        margin-top: #{$space}px!important;
+    }
+    .m-#{$l}-#{$space} {
+        margin-left: #{$space}px!important;
+    }
+    .m-#{$r}-#{$space} {
+        margin-right: #{$space}px!important;
+    }
+    .m-#{$b}-#{$space} {
+        margin-bottom: #{$space}px!important;
+    }
+    .p-#{$space} {
+        padding: #{$space}px!important;
+    }
+    .p-#{$t}-#{$space} {
+        padding-top: #{$space}px!important;
+    }
+    .p-#{$l}-#{$space} {
+        padding-left: #{$space}px!important;
+    }
+    .p-#{$r}-#{$space} {
+        padding-right: #{$space}px!important;
+    }
+    .p-#{$b}-#{$space} {
+        padding-bottom: #{$space}px!important;
+    }
+    $space:$space - 5
+}
+$font: 48;
+@while $font >= 12 {
+    .font-size-#{$font}{
+        font-size: #{$font}px
+    }
+    $font:$font - 2;
+}
