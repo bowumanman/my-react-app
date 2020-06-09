@@ -6,7 +6,7 @@
  * @Discription: 入口文件 
  */
 import React, {Component} from 'react';
-import {Switch, Route, Router, BrowserRouter, Link, Redirect} from 'react-router-dom';
+import {Switch, Route, Router, BrowserRouter, Redirect} from 'react-router-dom';
 import router from './router';
 import { createBrowserHistory } from "history";
 
@@ -17,8 +17,6 @@ class App extends Component{
     return (
     <BrowserRouter>
       <Router history={customHistory} >
-        <Link to="/login">login</Link><br />
-        <Link to="/">home-page</Link>
         <Switch>  
           {
             router.map((item, index) => {
