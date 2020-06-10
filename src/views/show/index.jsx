@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
-import B from '../../components/button';
-import img from '../../assets/images/img.jpg';
-export default class Show extends Component{
+import {Button, Input} from 'antd';
+import B from '@/components/button';
+import img from '@/assets/images/img.jpg';
+
+class Show extends Component{
     componentDidMount() {
         console.log(this.props)
     }
@@ -16,3 +17,4 @@ export default class Show extends Component{
         </div>
     }
 }
+export default Show;

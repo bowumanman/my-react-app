@@ -7,9 +7,12 @@
  */
 import React, {Component} from 'react';
 import style from './index.module.scss';
-export default class Button extends Component{
+import {withRouter} from 'react-router-dom';
+@withRouter
+class Button extends Component{
     render() {
-        console.log(style);
+        console.log(this.props);
         return <div className={`${style.btn} ${style.bg} p-20 align-center`}>button</div>
     }
 }
+export default Button;

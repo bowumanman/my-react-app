@@ -23,7 +23,7 @@ const router = [
         component: Loadable({
             loader: () => import('../views/home-page'),
             loading,
-            delay: 200 // 如果组件在delay时间内没有加载成功, 则显示 loading 组件
+            delay: 500 // 如果组件在delay时间内没有加载成功, 则显示 loading 组件
         }),
     },
     {
@@ -32,7 +32,7 @@ const router = [
         component: Loadable({
             loader: () => import('../views/login'),
             loading,
-            delay: 200
+            delay: 500
         }),
     },
     {
@@ -41,7 +41,7 @@ const router = [
         component: Loadable({
             loader: () => import('../views/show'),
             loading,
-            delay: 200
+            delay: 500
         }),
     }
 ]
