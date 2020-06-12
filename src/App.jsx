@@ -6,18 +6,24 @@
  * @Discription: 入口文件 
  */
 import React, {Component} from 'react';
-import {Switch, Route, Router, BrowserRouter, Redirect} from 'react-router-dom';
+import {Switch, Route, Router, HashRouter, Redirect, Link} from 'react-router-dom';
 import router from './router';
-import { createBrowserHistory } from "history";
+import { createHashHistory } from "history";
+import Home from './views/home-page';
 
-const customHistory = createBrowserHistory();
+const customHistory = createHashHistory();
 class App extends Component{
 
   render() {
     return (
-    <BrowserRouter>
+    <HashRouter>
       <Router history={customHistory} >
-        <Switch>  
+        <Link to="/show">show</Link>
+        <br/>
+        <Link to="/login">login</Link>
+        <br />
+        <Link to="/">home-page</Link>
+        <Switch>
           {
             router.map((item, index) => {
               return <Route key={index} {...item}></Route>
@@ -26,7 +32,7 @@ class App extends Component{
           <Redirect to="/login" /> {/*重定向路由地址*/}
         </Switch>
       </Router>
-    </BrowserRouter>
+    </HashRouter>
     )
   }
 }

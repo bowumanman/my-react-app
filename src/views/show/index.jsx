@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
-import {Button, Input} from 'antd';
+import {Button} from 'antd';
 import B from '@/components/button';
-import img from '@/assets/images/img.jpg';
+import getUrl from '@/service/config';
 
 class Show extends Component{
     componentDidMount() {
-        console.log(this.props)
+        console.log(this.props, getUrl());
     }
     render() {
         return <div className="m-30">
             <div className="login-btn m-t-10 btn">Login</div>
             <B></B>
-            <Button type="primary" danger>危险按钮</Button>
-            <img src={img} alt="一张图片" />
+            <Button type="primary" danger>danger</Button>
             <i className="fa fa-home font-size-30"></i>
         </div>
     }

@@ -19,6 +19,7 @@ const loading = ({ error, pastDelay }) => {
 const router = [
     {
         path: '/',
+        name: '/',
         exact: true,
         component: Loadable({
             loader: () => import('../views/home-page'),
@@ -28,6 +29,7 @@ const router = [
     },
     {
         path: '/login',
+        name: '/login',
         exact: true,
         component: Loadable({
             loader: () => import('../views/login'),
@@ -37,6 +39,7 @@ const router = [
     },
     {
         path: '/show',
+        name: '/show',
         exact: true,
         component: Loadable({
             loader: () => import('../views/show'),
