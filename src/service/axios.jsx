@@ -4,7 +4,6 @@ import api from './common/api';
 import {message} from 'antd';
 // import store from '../store';
 import qs from 'qs';
-// import app from '../main';
 import getUrl from './config';
 // import router from '../router';
 // const state = store.state;

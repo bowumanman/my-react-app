@@ -4,8 +4,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
 import './assets/css/index.scss';
+import { Provider } from 'react-redux';
+import store, {persister} from './store';
+import {PersistGate} from 'redux-persist/lib/integration/react';
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <PersistGate persistor={persister}>
+      <App />
+    </PersistGate>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 

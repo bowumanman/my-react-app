@@ -9,7 +9,6 @@ import React, {Component} from 'react';
 import {Switch, Route, Router, HashRouter, Redirect, Link} from 'react-router-dom';
 import router from './router';
 import { createHashHistory } from "history";
-
 const customHistory = createHashHistory();
 class App extends Component{
 
