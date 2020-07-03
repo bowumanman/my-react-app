@@ -4,11 +4,12 @@ import B from '@/components/button';
 import CommonService from '@/service/common';
 import {getUserInfo, deleteUserInfo, addCount, reduceCount} from '@/action';
 import {connect} from 'react-redux';
+import store from '@/store';
 import User from '@/components/user';
 const mapStoreToProps = (state) => {
     return {
         token: state.user.token,
-        count: state.count,
+        counts: state.count,
     };
 }
 const mapDispatchToProps = (dispatch) => {
@@ -50,10 +51,14 @@ class Show extends Component{
     addCount = () => {
         setTimeout(() => {
             this.props.addCount();
+            // store.dispatch(addCount());
         }, 3000)
     }
     reduceCount = () => {
-        this.props.reduceCount();
+        setTimeout(() => {
+            this.props.reduceCount();
+            // store.dispatch(reduceCount());
+        }, 3000)
     }
     upload = () => {
         this.setState({
@@ -67,11 +72,11 @@ class Show extends Component{
         })
     }
     render() {
-        const {count, token} = this.props;
+        const {counts, token} = this.props;
         const {userList, loading} = this.state;
         return <Spin spinning={loading}><div className="m-30">
             <div className="login-btn m-t-10 btn">Login</div>
-            <B count={count}></B>
+            <B count={counts.count}></B>
             <Button type="primary" onClick={this.login}>Login</Button>
             <br />
             <Button type="primary" onClick={this.deleteToken}>delete Token</Button>
@@ -82,7 +87,8 @@ class Show extends Component{
                     <Input disabled={true} value={token} />
                 </Form.Item>
                 <Form.Item label="计数：">
-                    <Input disabled={true} value={count} />
+                    <Input disabled={true} value={counts.count} />
+                    {store.getState().count.count}
                 </Form.Item>
                 <Form.Item className="align-center">
                     <Button type="primary" size="mini" onClick={this.addCount}>加1</Button>

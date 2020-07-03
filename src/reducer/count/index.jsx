@@ -1,11 +1,9 @@
-const count = (state = 1, action) => {
+const count = (state = {count: 1}, action) => {
     switch(action.type) {
         case 'ADD_COUNT':
-            state = state + 1;
-            return state;
+            return Object.assign({}, state, {count: state.count + 1})
         case 'REDUCE_COUNT':
-            state = state - 1;
-            return state;
+            return Object.assign({}, state, {count: state.count - 1})
         default:
             return state;
     }
