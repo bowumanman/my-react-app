@@ -12,6 +12,8 @@
     "babel-preset-env": "^1.7.0",
     "cross-env": "^7.0.2",
     "customize-cra": "^1.0.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.6",
@@ -43,5 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "uri-templates": "^0.2.0"
+  }
 }

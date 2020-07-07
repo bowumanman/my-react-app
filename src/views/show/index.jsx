@@ -1,35 +1,54 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
+import {Button, Input, Form} from 'antd';
 import B from '@/components/button';
-import getUrl from '@/service/config';
 import CommonService from '@/service/common';
-
+import {observer, inject} from 'mobx-react';
+const Item = Form.Item;
+@inject('UserStore', 'CountStore')
+@observer
 class Show extends Component{
     componentDidMount() {
-        console.log(this.props, getUrl());
+        console.log(this.props);
     }
     login = async () => {
         const params = {
             username: 'zhangsai',
-            password: '1231231',
+            password: '123123',
             grant_type: 'password',
-            id: '123123123'
         }
         try {
-            const res = await CommonService.login(params, {itemId: '123123123'});
-            console.log(res);
+            const res = await CommonService.login(params);
+            this.props.UserStore.getUserInfo({token: res.access_token});
         }
         catch(err) {
             console.log(err, 'err');
         }
-
+    }
+    add = () => {
+        this.props.CountStore.addCount();
+    }
+    jdd = () => {
+        this.props.CountStore.jddCount();
     }
     render() {
+        const {UserStore, CountStore} = this.props;
         return <div className="m-30">
             <div className="login-btn m-t-10 btn">Login</div>
             <B></B>
             <Button type="primary" danger onClick={this.login}>danger</Button>
             <i className="fa fa-home font-size-30"></i>
+            <Form>
+                <Item>
+                    <Input value={UserStore.user.token} disabled={true} />
+                </Item>
+                <Item>
+                    <Input value={CountStore.count} disabled={true} />
+                </Item>
+                <Item className="align-center">
+                    <Button type="primary" size="small" onClick={this.add}>add 1</Button>
+                    <Button className="m-l-10" type="primary" size="small" onClick={this.jdd}>jdd 1</Button>
+                </Item>
+            </Form>
         </div>
     }
 }
