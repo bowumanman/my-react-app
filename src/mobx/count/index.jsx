@@ -1,4 +1,4 @@
-import {observable, action} from 'mobx';
+import {observable, action, computed} from 'mobx';
 class CountStore {
     @observable count = 0;
 
@@ -9,6 +9,9 @@ class CountStore {
     @action.bound
     jddCount() {
         this.count -= 1;
+    }
+    @computed get total() {
+        return `total: ${this.count}`;
     }
 
 }

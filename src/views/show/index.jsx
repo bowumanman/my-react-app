@@ -46,7 +46,9 @@ class Show extends Component{
                 </Item>
                 <Item className="align-center">
                     <Button type="primary" size="small" onClick={this.add}>add 1</Button>
-                    <Button className="m-l-10" type="primary" size="small" onClick={this.jdd}>jdd 1</Button>
+                    <Button type="primary" className="m-l-10" size="small" onClick={this.jdd}>jdd 1</Button>
+                    <Button type="primary" className="m-l-10" size="small">{CountStore.total}</Button>
+                    <Button type="primary" danger className="m-l-10" size="small">{CountStore.count}</Button>
                 </Item>
             </Form>
         </div>
