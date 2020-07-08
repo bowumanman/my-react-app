@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import api from './common/api';
-import {message} from 'antd';
+import {Toast} from 'antd-mobile';
 // import store from '../store';
 import qs from 'qs';
 // import app from '../main';
@@ -31,9 +31,9 @@ ax.interceptors.request.use((config) => {
 ax.interceptors.response.use( (response) => {
     if (response.status === 200 && response.data.resCode !== undefined && response.data.resCode !== '0' && response.data.resCode !== 'cms-74') {// cms-74 天眼查的企业名称跟我们库里名称不一样 
         if (response.data.resCode === 'cvs-1001') {
-            message.error('密码错误!');
+            Toast.error('密码错误!');
         } else {
-            message.error(response.data.resMsg);
+            Toast.error(response.data.resMsg);
         }
     }
     return response;
@@ -82,7 +82,7 @@ ax.interceptors.response.use( (response) => {
                 break;
             default:
         }
-        message.error(msg);
+        Toast.error(msg);
     }
     return Promise.reject(err);
 });

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
-import B from '@/components/button';
+import {Button} from 'antd-mobile';
 import getUrl from '@/service/config';
 import CommonService from '@/service/common';
 
@@ -25,11 +24,9 @@ class Show extends Component{
 
     }
     render() {
-        return <div className="m-30">
+        return <div className="m-30" style={{padding: '20px'}}>
             <div className="login-btn m-t-10 btn">Login</div>
-            <B></B>
-            <Button type="primary" danger onClick={this.login}>danger</Button>
-            <i className="fa fa-home font-size-30"></i>
+            <Button type="primary" onClick={this.login}>danger</Button>
         </div>
     }
 }
