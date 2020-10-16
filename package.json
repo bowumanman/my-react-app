@@ -43,5 +43,9 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-elemefe": "^0.3.0",
+    "uri-templates": "^0.2.0"
+  }
 }
